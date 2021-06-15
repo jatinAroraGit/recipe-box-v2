@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "RecipeBox",
+    "slug": "recipe-box",
+    "privacy": "public",
+    "primaryColor": "#F06292",
+    "scheme": "recipebox",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#42A5F5"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "app.groupQuattro.recipeBoxApp",
+      "buildNumber": "1.5.0"
+    },
+    "android": {
+      "icon": "./assets/images/icon.png",
+      "package": "app.groupQuattro.recipeBoxApp",
+      "versionCode": 2
+    },
+    "description": ""
+  }
+}
