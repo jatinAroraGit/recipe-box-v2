@@ -9,6 +9,8 @@ import Firebase from '../configure/Firebase';
 import SafeAreaView from 'react-native-safe-area-view';
 //import Toast, { DURATION } from 'react-native-easy-toast'
 //import Toast from 'react-native-root-toast';
+import Button   from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const styles = StyleSheet.create({
   label: {
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
     height: 'auto',
     ...Platform.select({
       ios: {
-        width: 320
+        width: 420
       },
       web: {
         width: ((Dimensions.get('window').width) < 500) ? ((Dimensions.get('window').width) - 50) : 600,
@@ -45,20 +47,15 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 1,
 
-    alignItems: 'center',
+   
     paddingTop: 3,
-    padding: 8,
-    margin: 10,
-    backgroundColor: '#F48FB1',
+    
+    
+    //backgroundColor: '#F48FB1',
     borderRadius: 10,
     height: 'auto',
-    shadowColor: "#D81B60",
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.33,
-    shadowRadius: 8.62,
+   
+    
 
     elevation: 8,
 
@@ -187,22 +184,34 @@ function UserProfile({ props, user }) {
         Under Development
       </Banner>
       <View style={styles.innerContainer}>
-        <Title>Welcome, {user.displayName}</Title>
+        <Title>Welcome, Jatin</Title>
       </View>
 
       <View style={styles.innerContainer} >
-        <Title>Account Settings</Title>
-        <Button style={{ marginHorizontal: 10, marginTop: 20, backgroundColor: '#64B5F6' }} mode="contained" onPress={() => props.navigate('ChangeEmail')}>
+       
+        <Button  style={{ padding:5, marginTop: 2, backgroundColor: '#64B5F6' }} color="#FFFFFF" labelStyle={{fontSize: 24, textAlign:"left"}}  onPress={() => props.navigate('ChangeEmail')}>
           Change Email
           </Button>
-        <Button style={{ marginHorizontal: 10, marginTop: 20, backgroundColor: '#64B5F6' }} mode="contained" onPress={() => props.navigate('ChangePassword')}>
+        <Button style={{ marginTop: 2, backgroundColor: '#64B5F6' }} labelStyle={{fontSize: 24}} mode="contained" onPress={() => props.navigate('ChangePassword')}>
           Change Password
           </Button>
-        <Button style={{ marginHorizontal: 10, marginVertical: 20, backgroundColor: '#B71C1C' }} mode="contained" onPress={() => props.navigate('DeleteUser')}>
+        <Button style={{  marginVertical: 2, backgroundColor: '#64B5F6' }} labelStyle={{fontSize: 24}} mode="contained" onPress={() => props.navigate('DeleteUser')}>
           Delete Account
           </Button>
       </View>
 
+      <View style={styles.innerContainer} >
+      <List.Item
+    title="Change Email"
+    titleStyle={{fontSize:24}}
+    
+  />
+      <ButtonGroup variant="contained" aria-label="outlined primary button group">
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+    </ButtonGroup>
+     </View>
 
 
     </SafeAreaView>

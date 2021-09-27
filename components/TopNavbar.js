@@ -41,7 +41,7 @@ class TopNavbar extends React.Component {
     super(props);
     this.state = {
       firstQuery: '',
-      show: false,
+      show: true,
       userLoggedIn: (Firebase.auth().currentUser) ? true : false
     };
   }
@@ -106,7 +106,7 @@ class TopNavbar extends React.Component {
 
           <Appbar.Header style={appbarCustom.transparentStyle}>
             
-              /*
+              
             <Searchbar icon='window-minimize' onIconPress={() => { this.minimizeSearchBar() }} iconColor='#C62828' style={{ backgroundColor: '#F8BBD0', width: '100%' }}
               placeholder="Search by title"
               onChangeText={query => { this.setState({ firstQuery: query }); }}
@@ -118,9 +118,9 @@ class TopNavbar extends React.Component {
 
             />
             
-  }
+  
           </Appbar.Header>
-
+  
         ) : (
             <Appbar.Header style={appbarCustom.transparentStyle}>
               {BackButton}

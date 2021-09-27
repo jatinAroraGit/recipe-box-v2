@@ -138,8 +138,9 @@ class HomeScreen extends React.Component {
     return (
 
       <SafeAreaView style={{ flex: 3 }}>
-        <TopNavbar title='Home'></TopNavbar>
-
+        <View style={{borderBottomWidth:5, borderBottomColor:"#000000"}}>
+        <TopNavbar title='Home' enableThirdButton={true}></TopNavbar>
+        </View>
         <ScrollView >
 
           <View style={{ flex: 3, margin: '3%', marginBottom: "1%", marginStart: '5%', marginEnd: '5%', minHeight: 400, borderWidth: 0, borderRadius: 30, overflow: "hidden" }}>

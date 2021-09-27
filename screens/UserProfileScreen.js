@@ -41,10 +41,10 @@ const baseStyle = StyleSheet.create({
     height: 'auto',
     ...Platform.select({
       ios: {
-        width: 300
+        width: 500
       },
       android: {
-        width: 300
+        width: 500
       },
       web: {
         width: ((Dimensions.get('window').width) < 500) ? ((Dimensions.get('window').width) - 50) : 600,
@@ -87,7 +87,7 @@ const baseStyle = StyleSheet.create({
     height: 'auto',
     ...Platform.select({
       ios: {
-        width: 320
+        width: 420
       },
       web: {
         width: ((Dimensions.get('window').width) < 500) ? ((Dimensions.get('window').width) - 50) : 600,
@@ -210,14 +210,14 @@ class UserProfileScreen extends React.Component {
       return (
 
         <SafeAreaView style={{ flex: 3 }}>
-          <TopNavbar title='User Profile'></TopNavbar>
+          <TopNavbar title='Profile Settings'></TopNavbar>
           <ScrollView style={{ flex: 3 }}>
-            <View style={{ marginStart: 10, marginEnd: 10, position: 'relative', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center', borderWidth: 0, borderRadius: 10, overflow: "scroll" }}>
-              <View style={{ flex: 1 }}>
+            <View style={{ marginStart: 10,marginEnd: 10, position: 'relative',  borderWidth: 0, borderRadius: 10, overflow: "scroll" }}>
+             
                 <UserProfile props={this.props.navigation} user={this.state.currentUser}></UserProfile>
-              </View>
+            
               <View style={{ flex: 1, marginBottom: 10 }}>
-                <Button icon="logout-variant" style={{ backgroundColor: '#E53935', }} color='#FFFFFF' onPress={this.logoutUserOutOfStack}>Logout</Button>
+                <Button icon="logout-variant" labelStyle={{fontSize:24}} style={{ backgroundColor: '#E53935' }} color='#FFFFFF' onPress={this.logoutUserOutOfStack}>Logout</Button>
               </View>
             </View>
 
