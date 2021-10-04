@@ -2,15 +2,11 @@ import * as React from 'react';
 import { useState } from 'react';
 
 import { View, StyleSheet, Platform, Text, Dimensions, FlatList } from 'react-native';
-import { Button, TextInput, Title, Subheading, Avatar, Card, List, Snackbar, Banner } from 'react-native-paper';
+import { Button, TextInput, Title, Subheading, Avatar, Card, List, Snackbar, Banner, Divider } from 'react-native-paper';
 import { useForm, Controller } from 'react-hook-form'
 import { TouchableHighlight, ScrollView } from 'react-native-gesture-handler';
 import Firebase from '../configure/Firebase';
 import SafeAreaView from 'react-native-safe-area-view';
-//import Toast, { DURATION } from 'react-native-easy-toast'
-//import Toast from 'react-native-root-toast';
-import Button   from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
 const styles = StyleSheet.create({
   label: {
@@ -47,15 +43,15 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 1,
 
-   
-    paddingTop: 3,
-    
-    
-    //backgroundColor: '#F48FB1',
-    borderRadius: 10,
+
+
+
+
+
+
     height: 'auto',
-   
-    
+
+
 
     elevation: 8,
 
@@ -184,34 +180,35 @@ function UserProfile({ props, user }) {
         Under Development
       </Banner>
       <View style={styles.innerContainer}>
-        <Title>Welcome, Jatin</Title>
+
       </View>
 
       <View style={styles.innerContainer} >
-       
-        <Button  style={{ padding:5, marginTop: 2, backgroundColor: '#64B5F6' }} color="#FFFFFF" labelStyle={{fontSize: 24, textAlign:"left"}}  onPress={() => props.navigate('ChangeEmail')}>
-          Change Email
-          </Button>
-        <Button style={{ marginTop: 2, backgroundColor: '#64B5F6' }} labelStyle={{fontSize: 24}} mode="contained" onPress={() => props.navigate('ChangePassword')}>
-          Change Password
-          </Button>
-        <Button style={{  marginVertical: 2, backgroundColor: '#64B5F6' }} labelStyle={{fontSize: 24}} mode="contained" onPress={() => props.navigate('DeleteUser')}>
-          Delete Account
-          </Button>
+
       </View>
 
       <View style={styles.innerContainer} >
-      <List.Item
-    title="Change Email"
-    titleStyle={{fontSize:24}}
-    
-  />
-      <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
-    </ButtonGroup>
-     </View>
+        <List.Section>
+          <List.Subheader style={{ fontSize: 18 }}>Account</List.Subheader>
+          <View style={{ backgroundColor: "#FFFFFF", padding: 0, margin: 0 }}>
+            <List.Item style={{ padding: 0, margin: 0 }} titleStyle={{ color: "#283593", fontSize: 18, fontWeight: "bold" }} title="Change Email" left={() => <List.Icon icon="mail" color="#283593" />} onPress={() => props.navigate('ChangeEmail')} right={() => <List.Icon icon="chevron-right" color="#283593" style={{ fontWeight: "bold" }} />} />
+            <Divider style={{ backgroundColor: "#000000" }} />
+            <List.Item style={{ padding: 0, margin: 0 }} titleStyle={{ color: "#283593", fontSize: 18, fontWeight: "bold" }} title="Change Password" left={() => <List.Icon icon="key" color="#283593" />} onPress={() => props.navigate('ChangePassword')} right={() => <List.Icon icon="chevron-right" color="#000000" />} />
+            <Divider style={{ backgroundColor: "#000000" }} />
+            <List.Item style={{ padding: 0, margin: 0 }} titleStyle={{ color: "#283593", fontSize: 18, fontWeight: "bold" }} title="Delete Account" left={() => <List.Icon icon="account-remove" color="#283593" />} onPress={() => props.navigate('DeleteUser')} right={() => <List.Icon icon="chevron-right" color="#000000" />} />
+          </View>
+        </List.Section>
+
+        <List.Section>
+          <List.Subheader style={{ fontSize: 18 }}>Privacy</List.Subheader>
+          <View style={{ backgroundColor: "#FFFFFF" }}>
+            <List.Item style={{ padding: 0, margin: 0 }} titleStyle={{ color: "#283593", fontSize: 18, fontWeight: "bold" }} title="Sharing" left={() => <List.Icon icon="folder" color=" #283593" />} right={() => <List.Icon icon="chevron-right" color="#283593" />} />
+            <Divider style={{ backgroundColor: "#000000" }} />
+            <List.Item style={{ padding: 0, margin: 0 }} titleStyle={{ color: "#283593", fontSize: 18, fontWeight: "bold" }} title="Caching" left={() => <List.Icon icon="folder" color="#283593" />} right={() => <List.Icon icon="chevron-right" color="#283593" />} />
+          </View>
+        </List.Section>
+
+      </View>
 
 
     </SafeAreaView>

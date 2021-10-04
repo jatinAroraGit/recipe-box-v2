@@ -105,8 +105,8 @@ class TopNavbar extends React.Component {
 
 
           <Appbar.Header style={appbarCustom.transparentStyle}>
-            
-              
+
+
             <Searchbar icon='window-minimize' onIconPress={() => { this.minimizeSearchBar() }} iconColor='#C62828' style={{ backgroundColor: '#F8BBD0', width: '100%' }}
               placeholder="Search by title"
               onChangeText={query => { this.setState({ firstQuery: query }); }}
@@ -117,20 +117,21 @@ class TopNavbar extends React.Component {
               onSubmitEditing={(e) => this.handleSearch(e, firstQuery)}
 
             />
-            
-  
+
+
           </Appbar.Header>
-  
+
         ) : (
             <Appbar.Header style={appbarCustom.transparentStyle}>
               {BackButton}
               <Appbar.Content
                 color='#000000'
                 title={this.props.title}
+                titleStyle={{ fontSize: 20, fontWeight: "400" }}
                 subtitle={this.props.subtitle}
               />
               {
-              //<Appbar.Action icon="magnify" color='#FFFFFF' style={{ backgroundColor: '#000000' }} onPress={() => this.ShowHideComponent()} />
+                //<Appbar.Action icon="magnify" color='#FFFFFF' style={{ backgroundColor: '#000000' }} onPress={() => this.ShowHideComponent()} />
               }
               {ThirdButton}
             </Appbar.Header>
@@ -144,7 +145,7 @@ class TopNavbar extends React.Component {
   }
 }
 function testFunc() {
-  
+
 }
 
 

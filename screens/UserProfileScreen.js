@@ -209,15 +209,15 @@ class UserProfileScreen extends React.Component {
     else {
       return (
 
-        <SafeAreaView style={{ flex: 3 }}>
+        <SafeAreaView style={{ flex: 3, backgroundColor: "#F5F5F5" }}>
           <TopNavbar title='Profile Settings'></TopNavbar>
           <ScrollView style={{ flex: 3 }}>
-            <View style={{ marginStart: 10,marginEnd: 10, position: 'relative',  borderWidth: 0, borderRadius: 10, overflow: "scroll" }}>
-             
-                <UserProfile props={this.props.navigation} user={this.state.currentUser}></UserProfile>
-            
-              <View style={{ flex: 1, marginBottom: 10 }}>
-                <Button icon="logout-variant" labelStyle={{fontSize:24}} style={{ backgroundColor: '#E53935' }} color='#FFFFFF' onPress={this.logoutUserOutOfStack}>Logout</Button>
+            <View style={{ position: 'relative', borderWidth: 0, borderRadius: 10, overflow: "scroll" }}>
+
+              <UserProfile props={this.props.navigation} user={this.state.currentUser}></UserProfile>
+
+              <View style={{ flex: 1, marginBottom: 10, margin: 7 }}>
+                <Button icon="logout-variant" labelStyle={{ fontSize: 24, margin: 2 }} style={{ backgroundColor: '#283593' }} color='#FFFFFF' onPress={this.logoutUserOutOfStack}>Logout</Button>
               </View>
             </View>
 
